@@ -21,7 +21,7 @@ const row = (bill) => {
 //********Ajout de la méthode sort pour le tri des dates********
 const rows = (data) => {
   return (data && data.length) ? data
-  .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
+  .sort((a, b) => {return new Date(b.date) - new Date(a.date)})
   .map(bill => row(bill)).join("") : "";
 };
 

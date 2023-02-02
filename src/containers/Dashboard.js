@@ -129,7 +129,7 @@ export default class {
     this.updateBill(newBill)
     this.onNavigate(ROUTES_PATH['Dashboard'])
   }
-   //Ajout off() pour supprimer 
+   //Ajout #status-bills-container${this.index} lign 149
   handleShowTickets(e, bills, index) {
     if (this.counter === undefined || this.index !== index) this.counter = 0
     if (this.index === undefined || this.index !== index) this.index = index
@@ -146,8 +146,8 @@ export default class {
     }
 
     bills.forEach(bill => {
-      $(`#open-bill${bill.id}`).off().click((e) => {
-      //e.stopPropagation();
+      $(`#status-bills-container${this.index}
+      #open-bill${bill.id}`).click((e) => {
       this.handleEditTicket(e, bill, bills);
     });
     });
